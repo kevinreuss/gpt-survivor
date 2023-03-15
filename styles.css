@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.2rem;
+}
+
+header a {
+    color: #000000;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    bottom: 0;
+    left: 100px; /* Add this line */
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7rem; /* Updated font size */
+    text-align: center;
+    animation: moveObstacle 2s linear infinite;
+    /* Added to fix text blurriness */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smoothing: none;
+}
+
+.game-over {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    text-align: center;
+    display: none;
+    margin-bottom: 20px; /* Added margin-bottom */
+}
+
+.game-heading {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.start,
+.restart {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.start {
+    display: block;
+}
+
+.restart {
+    display: none;
+}
+
+.obstacle-count {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -50px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0%, 100% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 120px;
+    }
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .share-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .share-button:hover {
+    opacity: 0.8;
+  }
+  
+  .share-button.twitter {
+    background-color: #1da1f2;
+  }
+  
+  .share-button.linkedin {
+    background-color: #0077b5;
+  }
